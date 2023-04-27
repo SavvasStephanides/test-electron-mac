@@ -24,4 +24,4 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run make
-    - run: ls out
+    - run: ls -l out/my-app-darwin-x64
