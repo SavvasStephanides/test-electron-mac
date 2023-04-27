@@ -24,5 +24,4 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm run make
-    - run: cd out
-    - run: ls
+    - run: ls out
