@@ -26,4 +26,4 @@ jobs:
       run: |
         npm i
         npm run make
-        ls out/my-app-darwin-x64/my-app.app
+        ls out/my-app-darwin-x64/my-app.app/Contents
