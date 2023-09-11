@@ -32,5 +32,5 @@ jobs:
         SUPABASE_STORAGE_BUCKET_NAME: ${{ secrets.SUPABASE_STORAGE_BUCKET_NAME }}
         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       run: |
-        zip -r app.zip out/my-app-darwin-x64/my-app.app/Contents/MacOS/my-app/
+        zip app.zip out/my-app-darwin-x64/my-app.app
         npm run uploadApp
