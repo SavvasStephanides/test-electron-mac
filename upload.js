@@ -7,6 +7,6 @@ const filename = 'app.zip'
 
 const file = fs.readFileSync(filename)
 supabase.storage.from(process.env.SUPABASE_STORAGE_BUCKET_NAME).upload(filename, file)
-    .then(() => {
-        console.log("Done");
+    .then(({data, error}) => {
+        console.log({data, error});
     })
