@@ -23,7 +23,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Make
+      env:
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        SUPABASE_STORAGE_BUCKET_NAME: ${{ secrets.SUPABASE_STORAGE_BUCKET_NAME }}
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       run: |
         npm i
         npm run make
-        ls -l out/my-app-darwin-x64/my-app.app/Contents/MacOS/my-app
+        zip -r app.zip out/my-app-darwin-x64/
+        npm run uploadApp

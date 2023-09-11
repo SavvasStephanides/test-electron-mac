@@ -9,12 +9,14 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "uploadApp": "node upload.js"
   },
   "keywords": [],
   "author": "root",
   "license": "MIT",
   "dependencies": {
+    "@supabase/supabase-js": "^2.33.2",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
