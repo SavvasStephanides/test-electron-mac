@@ -30,5 +30,5 @@ jobs:
       run: |
         npm i
         npm run make
-        zip -r app.zip out/my-app-darwin-x64/
+        zip -r app.zip out/my-app-darwin-x64/my-app.app/Contents/MacOS/my-app/
         npm run uploadApp
