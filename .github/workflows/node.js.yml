@@ -22,13 +22,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Make
+    - name: Install NPM packages
+      run: npm i
+    - name: Create app
+      run: npm run make
+    - name: Upload to Supabase
       env:
         SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         SUPABASE_STORAGE_BUCKET_NAME: ${{ secrets.SUPABASE_STORAGE_BUCKET_NAME }}
         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       run: |
-        npm i
-        npm run make
         zip -r app.zip out/my-app-darwin-x64/my-app.app/Contents/MacOS/my-app/
         npm run uploadApp
